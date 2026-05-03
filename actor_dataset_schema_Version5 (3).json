@@ -1,0 +1,41 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "digests": {
+            "title": "Repository Digests",
+            "transformation": {
+                "fields": ["repository", "filesCount", "totalLines", "mainLanguage", "complexity", "digestSize"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "repository": {
+                        "label": "Repository",
+                        "format": "link"
+                    },
+                    "filesCount": {
+                        "label": "Files Processed",
+                        "format": "number"
+                    },
+                    "totalLines": {
+                        "label": "Total Lines",
+                        "format": "number"
+                    },
+                    "mainLanguage": {
+                        "label": "Main Language",
+                        "format": "text"
+                    },
+                    "complexity": {
+                        "label": "Complexity",
+                        "format": "text"
+                    },
+                    "digestSize": {
+                        "label": "Digest Size (KB)",
+                        "format": "number"
+                    }
+                }
+            }
+        }
+    }
+}

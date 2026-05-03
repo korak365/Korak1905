@@ -1,0 +1,87 @@
+{
+    "title": "Input schema of the GitHub Repo Digest Scraper",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "startUrls": {
+            "title": "GitHub Repository URLs",
+            "type": "array",
+            "description": "URLs of GitHub repositories to analyze (e.g., https://github.com/owner/repo).",
+            "editor": "requestListSources",
+            "prefill": [
+                {
+                    "url": "https://github.com/facebook/react"
+                }
+            ]
+        },
+        "maxFilesToProcess": {
+            "title": "Max Files to Process",
+            "type": "integer",
+            "description": "Maximum number of source files to include in digest.",
+            "default": 100
+        },
+        "fileExtensions": {
+            "title": "File Extensions to Include",
+            "type": "array",
+            "description": "Which file types to include (e.g., .js, .py, .ts, .jsx)",
+            "editor": "json",
+            "default": [".js", ".ts", ".jsx", ".tsx", ".py", ".java", ".go", ".rs", ".cpp", ".c"]
+        },
+        "excludePatterns": {
+            "title": "Exclude Patterns",
+            "type": "array",
+            "description": "Path patterns to exclude (node_modules, .git, dist, build, etc)",
+            "editor": "json",
+            "default": ["node_modules", ".git", "dist", "build", "__pycache__", ".next", ".venv"]
+        },
+        "includeDocumentation": {
+            "title": "Include Documentation",
+            "type": "boolean",
+            "description": "Include README, docs, and markdown files.",
+            "default": true
+        },
+        "includeTests": {
+            "title": "Include Test Files",
+            "type": "boolean",
+            "description": "Whether to include test and spec files.",
+            "default": false
+        },
+        "generateCodeTree": {
+            "title": "Generate Directory Tree",
+            "type": "boolean",
+            "description": "Create a visual directory structure overview.",
+            "default": true
+        },
+        "extractSummaries": {
+            "title": "Extract File Summaries",
+            "type": "boolean",
+            "description": "Generate brief summaries for each file using heuristics.",
+            "default": true
+        },
+        "includeStatistics": {
+            "title": "Include Code Statistics",
+            "type": "boolean",
+            "description": "Calculate lines of code, complexity metrics, etc.",
+            "default": true
+        },
+        "maxFileSizeKB": {
+            "title": "Max File Size (KB)",
+            "type": "integer",
+            "description": "Skip files larger than this size to save context.",
+            "default": 100
+        },
+        "compressOutput": {
+            "title": "Compress Output",
+            "type": "boolean",
+            "description": "Compress digest to save space and reduce token usage.",
+            "default": true
+        },
+        "outputFormat": {
+            "title": "Output Format",
+            "type": "string",
+            "description": "Format for the digest output.",
+            "enum": ["markdown", "json", "text"],
+            "default": "markdown"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema of the GitHub Repo Digest Scraper",
+    "properties": {
+        "repositoryDigests": {
+            "type": "string",
+            "title": "Repository Digests",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=digests"
+        },
+        "completeDigestFile": {
+            "type": "string",
+            "title": "Complete Digest Export",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records?key=REPO_DIGEST_COMPLETE"
+        },
+        "codeTreeStructure": {
+            "type": "string",
+            "title": "Directory Tree",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records?key=CODE_TREE"
+        },
+        "repositoryMetrics": {
+            "type": "string",
+            "title": "Repository Metrics",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records?key=REPO_METRICS"
+        },
+        "analysisReport": {
+            "type": "string",
+            "title": "Analysis Report",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records?key=ANALYSIS_REPORT"
+        }
+    }
+}
